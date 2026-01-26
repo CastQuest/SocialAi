@@ -135,12 +135,13 @@ The SocialAi backend operates on a **parallel, auto-healing worker architecture*
 #### external_posts
 - `id` (UUID, Primary Key)
 - `source` (Enum: reddit, lens, bluesky, zora)
-- `source_id` (String, Unique)
+- `source_id` (String)
 - `author` (String)
 - `content` (Text)
 - `url` (String)
 - `created_at` (Timestamp)
 - `synced_at` (Timestamp)
+- Unique constraint: (source, source_id)
 
 #### follows
 - `id` (UUID, Primary Key)
@@ -268,6 +269,11 @@ The SocialAi backend operates on a **parallel, auto-healing worker architecture*
 #### POST /api/posts/:id/save
 - **Purpose**: Save a post
 - **Output**: { saved: true }
+- **Authentication**: Required
+
+#### DELETE /api/posts/:id/save
+- **Purpose**: Remove a post from saved collection
+- **Output**: { saved: false }
 - **Authentication**: Required
 
 ### Social Graph Endpoints
