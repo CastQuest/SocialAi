@@ -402,7 +402,7 @@ SmartBrain is the AI engine powering intelligent features across SocialAi.
 
 #### 2. Vector Search
 - **Storage**: PostgreSQL with pgvector extension
-- **Algorithm**: Approximate nearest neighbor (ANN) using HNSW (Hierarchical Navigable Small World) or IVFFlat
+- **Algorithms**: Approximate nearest neighbor (ANN) using HNSW (Hierarchical Navigable Small World) or IVFFlat
 - **Features**:
   - Fast similarity search
   - Multi-dimensional indexing
