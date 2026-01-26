@@ -141,7 +141,7 @@ The SocialAi backend operates on a **parallel, auto-healing worker architecture*
 - `url` (String)
 - `created_at` (Timestamp)
 - `synced_at` (Timestamp)
-- Unique constraint: (source, source_id)
+- Unique constraint: (source, source_id) - prevents duplicate posts from the same external source
 
 #### follows
 - `id` (UUID, Primary Key)
@@ -272,7 +272,7 @@ The SocialAi backend operates on a **parallel, auto-healing worker architecture*
 - **Authentication**: Required
 
 #### DELETE /api/posts/:id/save
-- **Purpose**: Remove a post from saved collection
+- **Purpose**: Unsave a previously saved post
 - **Output**: { saved: false }
 - **Authentication**: Required
 
@@ -402,7 +402,7 @@ SmartBrain is the AI engine powering intelligent features across SocialAi.
 
 #### 2. Vector Search
 - **Storage**: PostgreSQL with pgvector extension
-- **Algorithm**: Approximate nearest neighbor (ANN)
+- **Algorithm**: Approximate nearest neighbor (ANN) using HNSW (Hierarchical Navigable Small World) or IVFFlat
 - **Features**:
   - Fast similarity search
   - Multi-dimensional indexing
