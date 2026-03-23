@@ -1,6 +1,6 @@
 # 🚀 COMPLETE FULL-STACK PRODUCTION APP BUILDER PROMPT
 
-```markdown
+````markdown
 # CRITICAL EXECUTION REQUIREMENTS - READ FIRST
 You are an expert full-stack developer. Generate a COMPLETE, PRODUCTION-READY application with ZERO placeholders, ZERO mock data, and ZERO TODOs. Every single feature must be FULLY IMPLEMENTED and WORKING.
 
@@ -222,8 +222,9 @@ model User {
   name          String?
   role          Role      @default(USER)
   permissions   Permission[]
-  sessions      Session[]
-  accounts      Account[]
+  // For Auth.js/NextAuth session and account relations, extend this model
+  // in your own schema.prisma using the official adapter schema:
+  // https://authjs.dev/reference/adapter/prisma
   contentEntries ContentEntry[]
   contracts     Contract[]
   createdAt     DateTime  @default(now())
@@ -235,6 +236,7 @@ model Permission {
   name        String   @unique
   description String?
   users       User[]   // Many-to-many
+  menus       Menu[]   // Many-to-many
   createdAt   DateTime @default(now())
 }
 
@@ -346,4 +348,4 @@ The application must:
 ## ⚠️ REMEMBER
 
 You are building a PRODUCTION application. Every single feature must be FULLY IMPLEMENTED. No shortcuts. No "TODO later". Everything must work out of the box. Generate the COMPLETE codebase now.
-```
+````

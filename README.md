@@ -9,7 +9,7 @@ It is built on a **parallel, auto‑healing, one‑file node architecture** powe
 
 ## 📋 Master Prompt
 
-See [`PROMPT.md`](./PROMPT.md) for the master prompt used to generate production-ready full-stack applications with this stack. Feed it to any AI coding agent to scaffold a complete, working implementation.
+See [`PROMPT.md`](./PROMPT.md) for a reference prompt for scaffolding production-ready full-stack applications. Feed it to any AI coding agent to scaffold a complete, working implementation.
 
 ---
 
